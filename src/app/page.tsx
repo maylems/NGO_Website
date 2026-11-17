@@ -3,7 +3,7 @@ import { Hero } from "@/components/hero";
 import { PublicationsSection } from "@/components/publications-section";
 import { WorkSection } from "@/components/work-section";
 import { RegionSection } from "@/components/region-section";
-import { ParticipationSection } from "@/components/participation-section";
+import { EngagementSection } from "@/components/engagement-section";
 import { CommunityBanner } from "@/components/community-banner";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <PublicationsSection />
         <WorkSection />
         <RegionSection />
-        <ParticipationSection />
+        <EngagementSection />
         <CommunityBanner />
       </main>
     </>

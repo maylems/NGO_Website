@@ -73,19 +73,21 @@ export function PublicationsSection() {
     >
       <div className="pt-16 md:pt-20 lg:pt-[88px]">
         <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-7">
-            <h2 className="text-[clamp(2rem,4.4vw,3.7rem)] font-bold uppercase leading-[1.02] tracking-[-0.02em] text-neutral-950">
-              <span className="block">Nos dernières</span>
-              <span className="block">publications</span>
-            </h2>
-          </div>
-
-          <div className="lg:col-span-5 lg:flex lg:justify-end">
+          <div className="lg:col-span-5 lg:col-start-8 lg:flex lg:flex-col lg:items-end">
             <p className="max-w-[390px] text-[13px] leading-[1.8] text-neutral-700 lg:pt-1">
-              L’ACHDR partage ses publications, rapports et ressources
-              documentaires afin de valoriser ses actions et de contribuer à la
-              réflexion sur les enjeux humanitaires et le développement durable.
+              L’Association pour l’Action Humanitaire et le Développement Durable
+              (ACHDR) est une organisation tchadienne fondée en 2014. Elle agit
+              aux côtés des populations pour répondre aux besoins humanitaires
+              et soutenir des initiatives de développement durable.
             </p>
+
+            <Link
+              href="/qui-sommes-nous"
+              className="mt-4 inline-flex items-center gap-2 border-b border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.13em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            >
+              Découvrir
+              <ArrowRightIcon className="h-3.5 w-3.5 text-accent" />
+            </Link>
           </div>
         </div>
 

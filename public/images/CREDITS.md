@@ -30,3 +30,6 @@ indiqués ci-dessous.
 - `community-banner.jpg` — photographie de l’ACHDR issue de sa galerie de
   présentation, publiée sur Peace by Africa :
   https://peacebyafrica.com/achdr-fr/
+- `about-achdr.jpg` — photographie de l’ACHDR issue de sa galerie de
+  présentation, publiée sur Peace by Africa :
+  https://peacebyafrica.com/achdr-fr/
