@@ -33,3 +33,24 @@ indiqués ci-dessous.
 - `about-achdr.jpg` — photographie de l’ACHDR issue de sa galerie de
   présentation, publiée sur Peace by Africa :
   https://peacebyafrica.com/achdr-fr/
+
+## Logos des partenaires
+
+Les logos suivants proviennent de Wikimedia Commons et restent la propriété de
+leurs organisations respectives. Leur utilisation est limitée à l’identification
+visuelle des organisations partenaires et collaboratrices.
+
+- `partners/fao.svg` — Organisation des Nations Unies pour l’alimentation et
+  l’agriculture : https://commons.wikimedia.org/wiki/File:FAO_logo.svg
+- `partners/wfp.svg` — Programme alimentaire mondial :
+  https://commons.wikimedia.org/wiki/File:World_Food_Program_logo.svg
+- `partners/undp.svg` — Programme des Nations Unies pour le développement :
+  https://commons.wikimedia.org/wiki/File:UNDP_logo.svg
+- `partners/unesco.svg` — UNESCO :
+  https://commons.wikimedia.org/wiki/File:Logo_UNESCO_new.svg
+- `partners/oxfam.svg` — Oxfam :
+  https://commons.wikimedia.org/wiki/File:Logo_Oxfam_01.svg
+- `partners/giz.svg` — Deutsche Gesellschaft für Internationale Zusammenarbeit :
+  https://commons.wikimedia.org/wiki/File:Deutsche_Gesellschaft_f%C3%BCr_Internationale_Zusammenarbeit_Logo.svg
+- `partners/iom.jpg` — Organisation internationale pour les migrations :
+  https://commons.wikimedia.org/wiki/File:Logo_der_International_Organization_for_Migration_(IOM).jpg

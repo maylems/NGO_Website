@@ -7,6 +7,35 @@ type PublicationsGridProps = {
   className?: string;
 };
 
+const newsCards = [
+  {
+    title:
+      "L'ACHDR renforce son appui aux populations vulnérables et aux sinistrés à N'Djamena",
+    description:
+      "Actions de terrain menées dans les arrondissements pour soutenir les ménages touchés par les crises et renforcer la résilience locale.",
+    image: "/images/action-response.jpg",
+    imageAlt:
+      "Distribution d’aide humanitaire aux populations affectées par les inondations",
+  },
+  {
+    title:
+      "Sécurité alimentaire et cohésion sociale : Bilan des initiatives communautaires",
+    description:
+      "Focus sur les programmes de soutien aux moyens d'existence durable et de prévention des conflits dans les provinces d'intervention.",
+    image: "/images/action-food.jpg",
+    imageAlt: "Agriculteur travaillant dans son champ",
+  },
+  {
+    title:
+      "Éducation, citoyenneté et protection des groupes vulnérables : Femmes et enfants au cœur de l'action",
+    description:
+      "Mise en avant des programmes d'accompagnement local, d'alphabétisation et de promotion du genre portés par l'équipe de coordination.",
+    image: "/images/publication-education.jpg",
+    imageAlt:
+      "Photographie d’archive de l’ACHDR lors d’une activité de formation communautaire",
+  },
+];
+
 export function PublicationsGrid({ className }: PublicationsGridProps) {
   return (
     <div
@@ -66,44 +95,80 @@ export function PublicationsGrid({ className }: PublicationsGridProps) {
 }
 
 export function PublicationsSection() {
+  const historyHref = publications[2]?.href ?? "/publications";
+
   return (
     <section
       id="publications"
-      className="mx-auto w-full max-w-[1440px] px-6 md:px-10 lg:px-12"
+      aria-labelledby="publications-heading"
+      className="bg-[#111111] text-white"
     >
-      <div className="pt-16 md:pt-20 lg:pt-[88px]">
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-5 lg:col-start-8 lg:flex lg:flex-col lg:items-end">
-            <p className="max-w-[390px] text-[13px] leading-[1.8] text-neutral-700 lg:pt-1">
-              L’Association pour l’Action Humanitaire et le Développement Durable
-              (ACHDR) est une organisation tchadienne fondée en 2014. Elle agit
-              aux côtés des populations pour répondre aux besoins humanitaires
-              et soutenir des initiatives de développement durable.
-            </p>
+      <div className="mx-auto w-full max-w-[1440px] px-6 py-20 md:px-10 md:py-24 lg:px-12 lg:py-28">
+        <div className="mx-auto max-w-[900px] text-center">
+          <h2
+            id="publications-heading"
+            className="text-[clamp(2rem,4.6vw,3.75rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white"
+          >
+            10 ans d’engagement humanitaire et de développement au Tchad
+          </h2>
 
-            <Link
-              href="/qui-sommes-nous"
-              className="mt-4 inline-flex items-center gap-2 border-b border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.13em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-            >
-              Découvrir
-              <ArrowRightIcon className="h-3.5 w-3.5 text-accent" />
-            </Link>
-          </div>
+          <p className="mt-6 text-[14px] leading-[1.85] text-white/70 md:text-[15px]">
+            L’Association pour l’Action Humanitaire et le Développement Durable
+            (ACHDR) œuvre pour un Tchad où les hommes et les femmes vivent en
+            harmonie, à l’abri des conflits et des catastrophes. Depuis une
+            décennie, notre organisation se mobilise sur le terrain pour apporter
+            une assistance humanitaire de qualité, renforcer la résilience des
+            communautés vulnérables et promouvoir le développement local à
+            travers la sécurité alimentaire, la santé, l’éducation et la
+            consolidation de la paix.
+          </p>
+
+          <a
+            href={historyHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 border-b border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            En savoir plus
+            <ArrowRightIcon className="h-4 w-4 text-accent" />
+          </a>
         </div>
 
-        <div className="mt-10 border-t border-neutral-200 md:mt-14" />
+        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-10">
+          {newsCards.map((card) => (
+            <article
+              key={card.title}
+              className="group flex h-full flex-col border border-white/10 bg-white/[0.03] transition-colors hover:border-accent/60"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
+                <Image
+                  src={card.image}
+                  alt={card.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, calc(100vw - 48px)"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
 
-        <PublicationsGrid className="pt-10 md:pt-12" />
+              <div className="flex flex-1 flex-col p-6 md:p-7">
+                <h3 className="text-[15px] font-bold leading-[1.45] text-white md:text-[16px]">
+                  {card.title}
+                </h3>
 
-        <div className="mt-12 border-t border-neutral-200 md:mt-16" />
+                <p className="mt-4 text-[13px] leading-[1.75] text-white/60">
+                  {card.description}
+                </p>
 
-        <div className="pb-10 pt-6 md:pb-14">
-          <Link
-            href="/publications"
-            className="inline-flex text-[11px] font-bold uppercase tracking-[0.13em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-          >
-            Voir toutes nos publications
-          </Link>
+                <Link
+                  href="/publications"
+                  className="mt-auto inline-flex items-center gap-2 pt-8 text-[10px] font-bold uppercase tracking-[0.14em] text-white hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                >
+                  Explorer les actualités
+                  <ArrowRightIcon className="h-4 w-4 text-accent" />
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

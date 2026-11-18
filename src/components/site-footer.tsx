@@ -77,7 +77,7 @@ export function SiteFooter() {
         <div className="grid gap-14 py-16 md:py-20 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <div className="flex h-14 items-start md:h-[70px]">
-              <Logo className="origin-top-left scale-125 md:scale-150" />
+              <Logo className="origin-top-left scale-100 md:scale-110" />
             </div>
 
             <a
