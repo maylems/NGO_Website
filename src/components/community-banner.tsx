@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRightIcon } from "@/components/icons";
 
 const points = [
   "Découvrez les actions de l’ACHDR en faveur des populations et des communautés.",
@@ -32,16 +30,6 @@ export function CommunityBanner() {
               <h2 className="max-w-[560px] text-[clamp(1.9rem,3.6vw,3.4rem)] font-bold uppercase leading-[1.05] tracking-[-0.01em] text-white">
                 Rejoignez notre communauté et agissons ensemble
               </h2>
-
-              <a
-                href="mailto:achdr015@gmail.com?subject=Rejoindre%20la%20communaut%C3%A9%20ACHDR"
-                className="mt-8 inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white hover:text-white/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-              >
-                Rejoindre notre communauté
-                <span aria-hidden="true" className="text-[18px] font-light leading-none">
-                  +
-                </span>
-              </a>
             </div>
 
             <div className="lg:pt-2">
@@ -61,24 +49,12 @@ export function CommunityBanner() {
             </div>
 
             <div className="md:justify-self-end lg:col-span-1 lg:pt-2">
-              <Link
-                href="/#actualites"
-                className="group inline-flex items-center gap-4 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              <a
+                href="mailto:achdr015@gmail.com?subject=Rejoindre%20la%20communaut%C3%A9%20ACHDR"
+                className="inline-flex min-h-[52px] items-center justify-center bg-white px-8 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#062F49] transition-colors duration-200 hover:bg-[#E6F7FD] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
               >
-                <span className="text-[10px] font-bold uppercase tracking-[0.16em]">
-                  Suivez-nous
-                </span>
-
-                <span className="flex items-center">
-                  <span
-                    aria-hidden="true"
-                    className="h-px w-6 bg-white/70 transition-colors group-hover:bg-white lg:w-8"
-                  />
-                  <span className="grid h-24 w-24 shrink-0 place-items-center rounded-full border border-white/80 transition-colors group-hover:border-white xl:h-28 xl:w-28">
-                    <ArrowRightIcon className="h-5 w-5" />
-                  </span>
-                </span>
-              </Link>
+                Nous rejoindre
+              </a>
             </div>
           </div>
         </div>

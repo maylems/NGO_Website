@@ -13,7 +13,6 @@ import {
 
 const navItems = [
   { label: "Qui sommes-nous", href: "#" },
-  { label: "Nos domaines", href: "#nos-domaines" },
   { label: "Nos actions", href: "#nos-actions" },
   { label: "Actualités", href: "#actualites" },
   { label: "Publications", href: "#" },

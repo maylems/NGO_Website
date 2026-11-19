@@ -101,18 +101,18 @@ export function PublicationsSection() {
     <section
       id="publications"
       aria-labelledby="publications-heading"
-      className="bg-[#111111] text-white"
+      className="bg-[#f2f2f2] text-neutral-950"
     >
       <div className="mx-auto w-full max-w-[1440px] px-6 py-20 md:px-10 md:py-24 lg:px-12 lg:py-28">
         <div className="mx-auto max-w-[900px] text-center">
           <h2
             id="publications-heading"
-            className="text-[clamp(2rem,4.6vw,3.75rem)] font-bold leading-[1.08] tracking-[-0.03em] text-white"
+            className="text-[clamp(1.75rem,3.2vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-neutral-950"
           >
             10 ans d’engagement humanitaire et de développement au Tchad
           </h2>
 
-          <p className="mt-6 text-[14px] leading-[1.85] text-white/70 md:text-[15px]">
+          <p className="mt-6 text-[14px] leading-[1.85] text-neutral-600 md:text-[15px]">
             L’Association pour l’Action Humanitaire et le Développement Durable
             (ACHDR) œuvre pour un Tchad où les hommes et les femmes vivent en
             harmonie, à l’abri des conflits et des catastrophes. Depuis une
@@ -127,7 +127,7 @@ export function PublicationsSection() {
             href={historyHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 border-b border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-white hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            className="mt-8 inline-flex items-center gap-2 border-b border-accent pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             En savoir plus
             <ArrowRightIcon className="h-4 w-4 text-accent" />
@@ -138,9 +138,9 @@ export function PublicationsSection() {
           {newsCards.map((card) => (
             <article
               key={card.title}
-              className="group flex h-full flex-col border border-white/10 bg-white/[0.03] transition-colors hover:border-accent/60"
+              className="group flex h-full flex-col border border-neutral-200 bg-white transition-colors hover:border-accent/60"
             >
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-900">
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
                 <Image
                   src={card.image}
                   alt={card.imageAlt}
@@ -151,17 +151,17 @@ export function PublicationsSection() {
               </div>
 
               <div className="flex flex-1 flex-col p-6 md:p-7">
-                <h3 className="text-[15px] font-bold leading-[1.45] text-white md:text-[16px]">
+                <h3 className="text-[15px] font-bold leading-[1.45] text-neutral-950 md:text-[16px]">
                   {card.title}
                 </h3>
 
-                <p className="mt-4 text-[13px] leading-[1.75] text-white/60">
+                <p className="mt-4 text-[13px] leading-[1.75] text-neutral-600">
                   {card.description}
                 </p>
 
                 <Link
                   href="/publications"
-                  className="mt-auto inline-flex items-center gap-2 pt-8 text-[10px] font-bold uppercase tracking-[0.14em] text-white hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+                  className="mt-auto inline-flex items-center gap-2 pt-8 text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
                 >
                   Explorer les actualités
                   <ArrowRightIcon className="h-4 w-4 text-accent" />

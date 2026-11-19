@@ -25,7 +25,7 @@ export const heroSlides: HeroSlide[] = [
       "Ensemble, nous œuvrons pour l'action humanitaire et le développement durable des communautés.",
     cta: {
       label: "Découvrir nos actions",
-      href: "#nos-domaines",
+      href: "#actualites",
     },
     media: {
       src: "/images/image.png",
@@ -39,7 +39,7 @@ export const heroSlides: HeroSlide[] = [
       "Ensemble, nous œuvrons pour l'action humanitaire et le développement durable des communautés.",
     cta: {
       label: "Découvrir nos actions",
-      href: "#nos-domaines",
+      href: "#actualites",
     },
     media: {
       src: "/images/action-response.jpg",
@@ -53,7 +53,7 @@ export const heroSlides: HeroSlide[] = [
       "Ensemble, nous œuvrons pour l'action humanitaire et le développement durable des communautés.",
     cta: {
       label: "Découvrir nos actions",
-      href: "#nos-domaines",
+      href: "#actualites",
     },
     media: {
       src: "/images/action-health.jpg",
@@ -67,7 +67,7 @@ export const heroSlides: HeroSlide[] = [
       "Ensemble, nous œuvrons pour l'action humanitaire et le développement durable des communautés.",
     cta: {
       label: "Découvrir nos actions",
-      href: "#nos-domaines",
+      href: "#actualites",
     },
     media: {
       src: "/images/action-food.jpg",

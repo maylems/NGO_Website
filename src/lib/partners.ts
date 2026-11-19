@@ -45,7 +45,7 @@ export const partnerLogos: PartnerLogo[] = [
     src: "/images/partners/unesco.svg",
     width: 262,
     height: 56,
-    source: "https://commons.wikimedia.org/wiki/File:Logo_UNESCO_new.svg",
+    source: "https://commons.wikimedia.org/wiki/File:Logo_UNESCO_2021.svg",
   },
   {
     id: "oxfam",
