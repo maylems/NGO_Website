@@ -32,14 +32,14 @@ body {
 }
 
 .hero-shell {
-  min-height: max(620px, calc(100vh - 82px));
-  min-height: max(620px, calc(100svh - 82px));
+  min-height: max(620px, calc(100vh - 113px));
+  min-height: max(620px, calc(100svh - 113px));
 }
 
 @media (min-width: 1024px) {
   .hero-shell {
-    min-height: max(720px, calc(100vh - 82px));
-    min-height: max(720px, calc(100svh - 82px));
+    min-height: max(720px, calc(100vh - 165px));
+    min-height: max(720px, calc(100svh - 165px));
   }
 }
 

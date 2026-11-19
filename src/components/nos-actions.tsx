@@ -113,7 +113,7 @@ export function NosActions() {
           data-paused={isPaused}
           className="w-full"
         >
-          <div className="relative h-[260px] w-full sm:h-[360px] md:h-[440px] lg:h-[570px]">
+          <div className="relative h-[260px] w-full sm:h-[360px] md:h-[440px] lg:-mt-12 lg:h-[618px]">
             {actionSlides.map((slide, index) => (
               <div
                 key={slide.id}

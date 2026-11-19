@@ -205,10 +205,10 @@ export function SiteFooter() {
               <Image
                 src="/images/Logos/Achdr_Logo.png"
                 alt="Logo ACHDR"
-                width={1254}
-                height={1254}
-                sizes="(min-width: 1024px) 96px, 80px"
-                className="h-20 w-20 shrink-0 object-contain lg:h-24 lg:w-24"
+                width={256}
+                height={256}
+                sizes="(min-width: 1024px) 64px, 48px"
+                className="h-12 w-12 shrink-0 object-contain lg:h-16 lg:w-16"
               />
               <p className="max-w-[300px] text-[12px] font-semibold uppercase leading-[1.45] tracking-[0.08em] text-white">
                 Association pour l’Action Humanitaire et le Développement Durable (ACHDR)

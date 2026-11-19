@@ -34,6 +34,14 @@ const newsCards = [
     imageAlt:
       "Photographie d’archive de l’ACHDR lors d’une activité de formation communautaire",
   },
+  {
+    title:
+      "Eau, hygiène et assainissement : des infrastructures au service des communautés",
+    description:
+      "Des actions concrètes pour améliorer l’accès à l’eau potable, renforcer les pratiques d’hygiène et soutenir des conditions de vie plus saines.",
+    image: "/images/region-community.jpg",
+    imageAlt: "Remise d’un point d’eau à une communauté locale",
+  },
 ];
 
 export function PublicationsGrid({ className }: PublicationsGridProps) {
@@ -134,7 +142,17 @@ export function PublicationsSection() {
           </a>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-10">
+        <div className="mt-14 lg:mt-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500">
+            À la une
+          </p>
+          <span
+            aria-hidden="true"
+            className="mt-2 block w-12 border-t border-neutral-300"
+          />
+        </div>
+
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {newsCards.map((card) => (
             <article
               key={card.title}
@@ -145,7 +163,7 @@ export function PublicationsSection() {
                   src={card.image}
                   alt={card.imageAlt}
                   fill
-                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 46vw, calc(100vw - 48px)"
+                  sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 48px)"
                   className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>

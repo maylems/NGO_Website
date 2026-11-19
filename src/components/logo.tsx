@@ -15,11 +15,11 @@ export function Logo({ className }: LogoProps) {
       <Image
         src="/images/Logos/Achdr_Logo.png"
         alt=""
-        width={1254}
-        height={1254}
-        sizes="56px"
+        width={256}
+        height={256}
+        sizes="64px"
         loading="eager"
-        className="h-14 w-14 shrink-0 object-contain"
+        className="h-16 w-16 shrink-0 object-contain"
       />
     </Link>
   );
