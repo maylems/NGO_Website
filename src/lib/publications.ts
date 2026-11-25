@@ -1,3 +1,5 @@
+import { cloudinaryAssets, cloudinaryImageUrl } from "@/lib/cloudinary-assets";
+
 export type Publication = {
   isoDate: string;
   date: string;
@@ -27,7 +29,7 @@ export const publications: Publication[] = [
       "Ouaddaï : l’ONG ACHDR outille les acteurs locaux pour une meilleure gestion des conflits scolaires",
     description:
       "À Abéché, un atelier de cinq jours outille les responsables communautaires, les chefs d’établissement et les représentants des associations de parents d’élèves sur la gestion des conflits en milieu scolaire.",
-    image: "/images/publication-dialogue.jpg",
+    image: cloudinaryImageUrl(cloudinaryAssets.highlight),
     imageAlt:
       "Photographie d’archive de l’ACHDR lors d’une rencontre avec des acteurs locaux",
     href: "https://traceinfos.com/ouaddai-long-achdr-outille-les-acteurs-locaux-pour-une-meilleure-gestion-des-conflits-scolaires/",
@@ -38,7 +40,7 @@ export const publications: Publication[] = [
     title: "L’ONG ACHDR souffle ses dix bougies",
     description:
       "En prélude à la célébration de ses dix ans, l’ACHDR revient sur son histoire, ses partenaires et ses actions menées dans plusieurs provinces du Tchad.",
-    image: "/images/publication-anniversaire.jpg",
+    image: cloudinaryImageUrl(cloudinaryAssets.communityAlt),
     imageAlt: "Photographie d’archive de l’ACHDR sur le terrain",
     href: "https://ndjamenahebdo.net/long-achdr-souffle-ses-dix-bougies/",
   },

@@ -53,19 +53,6 @@ body {
   will-change: opacity;
 }
 
-.hero-image {
-  transform: scale(1.08);
-}
-
-.hero-slide[data-active="true"] .hero-image {
-  animation: hero-ken-burns 6500ms ease-out both;
-  will-change: transform;
-}
-
-.hero-shell[data-paused="true"] .hero-image {
-  animation-play-state: paused;
-}
-
 .hero-reveal {
   opacity: 0;
   animation: hero-reveal 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -73,15 +60,6 @@ body {
 
 .hero-shell[data-paused="true"] .hero-reveal {
   animation-play-state: paused;
-}
-
-@keyframes hero-ken-burns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
 }
 
 @keyframes hero-reveal {
@@ -98,12 +76,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .hero-slide {
     transition: none;
-  }
-
-  .hero-image,
-  .hero-slide[data-active="true"] .hero-image {
-    transform: none;
-    animation: none;
   }
 
   .hero-reveal {

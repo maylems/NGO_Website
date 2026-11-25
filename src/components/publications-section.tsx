@@ -1,48 +1,15 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Suspense } from "react";
+import {
+  FeaturedNewsGrid,
+  FeaturedNewsSkeleton,
+} from "@/components/featured-news";
 import { ArrowRightIcon } from "@/components/icons";
 import { publications } from "@/lib/publications";
 
 type PublicationsGridProps = {
   className?: string;
 };
-
-const newsCards = [
-  {
-    title:
-      "L'ACHDR renforce son appui aux populations vulnérables et aux sinistrés à N'Djamena",
-    description:
-      "Actions de terrain menées dans les arrondissements pour soutenir les ménages touchés par les crises et renforcer la résilience locale.",
-    image: "/images/action-response.jpg",
-    imageAlt:
-      "Distribution d’aide humanitaire aux populations affectées par les inondations",
-  },
-  {
-    title:
-      "Sécurité alimentaire et cohésion sociale : Bilan des initiatives communautaires",
-    description:
-      "Focus sur les programmes de soutien aux moyens d'existence durable et de prévention des conflits dans les provinces d'intervention.",
-    image: "/images/action-food.jpg",
-    imageAlt: "Agriculteur travaillant dans son champ",
-  },
-  {
-    title:
-      "Éducation, citoyenneté et protection des groupes vulnérables : Femmes et enfants au cœur de l'action",
-    description:
-      "Mise en avant des programmes d'accompagnement local, d'alphabétisation et de promotion du genre portés par l'équipe de coordination.",
-    image: "/images/publication-education.jpg",
-    imageAlt:
-      "Photographie d’archive de l’ACHDR lors d’une activité de formation communautaire",
-  },
-  {
-    title:
-      "Eau, hygiène et assainissement : des infrastructures au service des communautés",
-    description:
-      "Des actions concrètes pour améliorer l’accès à l’eau potable, renforcer les pratiques d’hygiène et soutenir des conditions de vie plus saines.",
-    image: "/images/region-community.jpg",
-    imageAlt: "Remise d’un point d’eau à une communauté locale",
-  },
-];
 
 export function PublicationsGrid({ className }: PublicationsGridProps) {
   return (
@@ -152,41 +119,10 @@ export function PublicationsSection() {
           />
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {newsCards.map((card) => (
-            <article
-              key={card.title}
-              className="group flex h-full flex-col border border-neutral-200 bg-white transition-colors hover:border-accent/60"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
-                <Image
-                  src={card.image}
-                  alt={card.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 48px)"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-
-              <div className="flex flex-1 flex-col p-6 md:p-7">
-                <h3 className="text-[15px] font-bold leading-[1.45] text-neutral-950 md:text-[16px]">
-                  {card.title}
-                </h3>
-
-                <p className="mt-4 text-[13px] leading-[1.75] text-neutral-600">
-                  {card.description}
-                </p>
-
-                <Link
-                  href="/publications"
-                  className="mt-auto inline-flex items-center gap-2 pt-8 text-[10px] font-bold uppercase tracking-[0.14em] text-neutral-950 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
-                >
-                  Explorer les actualités
-                  <ArrowRightIcon className="h-4 w-4 text-accent" />
-                </Link>
-              </div>
-            </article>
-          ))}
+        <div className="mt-8">
+          <Suspense fallback={<FeaturedNewsSkeleton />}>
+            <FeaturedNewsGrid />
+          </Suspense>
         </div>
       </div>
     </section>

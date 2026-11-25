@@ -1,11 +1,13 @@
 import Image from "next/image";
 
+import { cloudinaryAssets, cloudinaryImageUrl } from "@/lib/cloudinary-assets";
+
 const commitments = [
   {
     title: "La dignité humaine et la solidarité",
     description:
       "La dignité humaine constitue le fondement de toute société juste et inclusive. Elle implique le respect des droits fondamentaux, la reconnaissance de chaque personne et la promotion de valeurs de solidarité, d'équité et de respect mutuel.",
-    image: "/images/hero-community.jpg",
+    image: cloudinaryImageUrl(cloudinaryAssets.community),
     imageAlt: "Femmes de la communauté d’Abéché, au Tchad",
   },
   {
@@ -26,7 +28,7 @@ const commitments = [
     title: "La coopération et la responsabilité collective",
     description:
       "Les grands défis humanitaires et sociaux nécessitent des réponses concertées. La coopération entre les institutions, les organisations, les partenaires et les communautés permet de partager les connaissances, de renforcer les synergies et de construire des réponses durables aux enjeux communs.",
-    image: "/images/publication-dialogue.jpg",
+    image: cloudinaryImageUrl(cloudinaryAssets.highlight),
     imageAlt: "Rencontre de dialogue communautaire organisée par l’ACHDR",
   },
 ];

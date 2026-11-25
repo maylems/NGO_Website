@@ -4,11 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { HERO_SLIDE_DURATION, heroSlides } from "@/lib/hero-slides";
+import { heroSlides } from "@/lib/hero-slides";
+
+type HeroSlideWithUrls = (typeof heroSlides)[number] & {
+  imageUrl?: string;
+};
 
 export function Hero() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndex = 0;
   const [isPaused, setIsPaused] = useState(false);
+  const [cloudinaryImages, setCloudinaryImages] = useState<Record<string, string>>({});
   const activeSlide = heroSlides[activeIndex];
 
   useEffect(() => {
@@ -22,16 +27,31 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    if (isPaused) {
-      return;
-    }
+    let cancelled = false;
 
-    const timeout = window.setTimeout(() => {
-      setActiveIndex((current) => (current + 1) % heroSlides.length);
-    }, HERO_SLIDE_DURATION);
+    fetch("/api/hero-slides")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Hero slides request failed: ${response.status}`);
+        }
+        return response.json() as Promise<{ slides: HeroSlideWithUrls[] }>;
+      })
+      .then((data) => {
+        if (cancelled) return;
+        const nextImages: Record<string, string> = {};
+        for (const slide of data.slides) {
+          if (slide.imageUrl) nextImages[slide.id] = slide.imageUrl;
+        }
+        setCloudinaryImages(nextImages);
+      })
+      .catch(() => {
+        if (!cancelled) setCloudinaryImages({});
+      });
 
-    return () => window.clearTimeout(timeout);
-  }, [activeIndex, isPaused]);
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   return (
     <section
@@ -50,7 +70,7 @@ export function Hero() {
             className="hero-slide absolute inset-0"
           >
             <Image
-              src={slide.media.src}
+              src={cloudinaryImages[slide.id] ?? slide.media.src}
               alt={index === activeIndex ? slide.media.alt : ""}
               fill
               sizes="100vw"
@@ -61,9 +81,6 @@ export function Hero() {
             />
           </div>
         ))}
-
-        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/85 via-neutral-950/50 to-neutral-950/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/75 via-neutral-950/10 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1440px] flex-1 flex-col justify-end px-6 pt-24 pb-40 sm:pb-28 md:px-10 lg:px-12 lg:pb-24">
